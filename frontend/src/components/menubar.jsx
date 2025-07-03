@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { assets } from '../assets/assets.js'; // Adjust the path as necessary
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Menubar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     return (
         <nav className="bg-white px-8 py-4 flex justify-between items-center">
             {/*left side = logo + text */}
-            <div className="flex items-center space-x-2">
+            <Link className="flex items-center space-x-2" to="/">
                 <img src={assets.logo} alt="logo" className="h-8 w-8 object-contain cursor-pointer" />
                 <span className="text-2xl font-semibold text-indigo-700 cursor-pointer">
                     remove.<span className="text-gray-400 cursor-pointer">bg</span>
                 </span>
-            </div>
+            </Link>
             {/* Right side = action buttons*/}
             <div className="hidden md:flex items-center space-x-4">
                 <button className="text-gray-700 hover:text-blue-500 font-medium">
