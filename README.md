@@ -1,34 +1,93 @@
-# 🖼️ AI Background Remover – Frontend
+🖼️ AI Background Remover – Full Stack SaaS App
+An AI-powered background remover built with React, Tailwind CSS, Spring Boot, and Clerk Authentication. This SaaS application allows users to upload images, remove backgrounds using the Clipdrop API, and pay via a credit-based system powered by Razorpay.
 
-This is the frontend of a powerful AI-powered background remover SaaS application built using React and Tailwind CSS.
+🚀 Features
+🎯 AI-Powered Image Background Removal using Clipdrop API
 
-The app uses Clipdrop API to remove backgrounds from images and integrates Razorpay for payments with a credit-based system. Backend (coming soon) is built with Spring Boot.
+📤 Upload images and convert to Base64 instantly
 
----
+🔐 Authentication via Clerk (Sign-up / Sign-in modals)
 
-## 🚀 Features
+💳 Razorpay Integration for seamless payments (credits-based system)
 
-✅ AI integration with Clipdrop API  
-✅ Upload images and convert to Base64  
-✅ Responsive and clean UI with Tailwind CSS  
-🔐 JWT Authentication (Clerk)  
-💳 Razorpay integration (coming with backend)  
-📦 Credit-based system for processing images  
+🧾 Credit System to track and manage image processing usage
 
----
+🧑‍💻 User Dashboard (Coming soon)
 
-## 🛠️ Tech Stack
+⚙️ Full RESTful Spring Boot backend with Feign client and JWT support
 
-- React.js
-- Tailwind CSS
-- Axios
-- Clipdrop API (image processing)
-- Razorpay (payment gateway)
-- Clerk (authentication)
-- Spring Boot + Feign Client (backend — coming soon)
-- MySQL
+📱 Fully responsive UI built with Tailwind CSS
 
----
+🧠 Scalable and production-ready architecture
 
-## 📁 Project Structure
+🧰 Tech Stack
+Frontend:
+React.js
 
+Tailwind CSS
+
+Axios
+
+Clerk (Auth)
+
+Clipdrop API (Image Background Removal)
+
+Backend:
+Spring Boot (Java)
+
+Feign Client
+
+JWT Authentication
+
+MySQL (Database)
+
+Razorpay API (Payment Gateway)
+
+📁 Project Structure
+css
+Copy
+Edit
+ai-background-remover/
+│
+├── backend/
+│   ├── src/
+│   │   ├── main/java/com/yourcompany/backgroundremover/
+│   │   ├── controller/
+│   │   ├── service/
+│   │   ├── model/
+│   │   └── config/
+│   └── pom.xml
+│
+├── frontend/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   └── tailwind.config.js
+│
+├── .env
+├── .gitignore
+├── README.md
+└── package.json / pom.xml
+
+📌 TODO
+ User dashboard for credit tracking
+
+ Admin panel
+
+ Drag-and-drop image upload
+
+ Credit recharge from dashboard
+
+ Email notifications
+
+ Production deployment (Vercel + Render/EC2)
+
+📸 Screenshots
+Coming soon...
+
+🙌 Author
+Yash Ramnani
+Made using React, Spring Boot & a pinch of caffeine.
