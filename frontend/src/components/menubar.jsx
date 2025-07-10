@@ -2,9 +2,22 @@ import React, { useState } from 'react';
 import { assets } from '../assets/assets.js'; // Adjust the path as necessary
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useClerk } from '@clerk/clerk-react';
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
+
 
 const Menubar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const {openSignIn, openSignUp} = useClerk();
+
+    const openRegister = () => {
+        openSignUp({});
+    }
+
+    const openLogin = () => {
+        openSignIn({});
+    }
+
     return (
         <nav className="bg-white px-8 py-4 flex justify-between items-center">
             {/*left side = logo + text */}
@@ -16,12 +29,17 @@ const Menubar = () => {
             </Link>
             {/* Right side = action buttons*/}
             <div className="hidden md:flex items-center space-x-4">
-                <button className="text-gray-700 hover:text-blue-500 font-medium">
+                <SignedOut>
+                    <button className="text-gray-700 hover:text-blue-500 font-medium" onClick={openLogin}>
                     Login
                 </button>
-                <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium px-4 py-2 rounded-full transition-all">
+                <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium px-4 py-2 rounded-full transition-all" onClick={openRegister}>
                     Sign up
                 </button>
+                </SignedOut>
+                <SignedIn>
+                    <UserButton />
+                </SignedIn>
             </div>
             {/* Hamburger menu for mobile view */}
             <div className="md:hidden">
@@ -47,6 +65,6 @@ const Menubar = () => {
 }
 
 export default Menubar;
-// This component is a placeholder for the menubar.
+// This component is a placeholder for the menubar..
 
 
